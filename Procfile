@@ -1,0 +1,1 @@
+web: gunicorn MainIoT.wsgi --log-file -
