@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class ChartusConfig(AppConfig):
-    name = 'chartUS'
+    name = 'chartus'

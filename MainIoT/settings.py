@@ -37,8 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'chartUS',
     'rest_framework',
+    'chartsensor',
 ]
 
 MIDDLEWARE = [
@@ -57,7 +57,7 @@ ROOT_URLCONF = 'MainIoT.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['chartUS/templates/'],
+        'DIRS': ['chartus/templates/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'MainIoT.wsgi.application'
     }
 }'''
 
-'''DATABASES = {
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'IoT_DB',
@@ -92,16 +92,16 @@ WSGI_APPLICATION = 'MainIoT.wsgi.application'
         'HOST': '127.0.0.1',
         'DATABASES_PORT': '5432',
     }
-}'''
+}
 
-import dj_database_url
+'''import dj_database_url
 from decouple import config
 
 DATABASES = {
     'default': dj_database_url.config(
         default= config('DATABASE_URL')
         )
-}
+}'''
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators

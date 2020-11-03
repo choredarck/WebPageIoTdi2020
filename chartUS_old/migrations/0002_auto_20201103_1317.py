@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('chartUS', '0001_initial'),
+        ('chartus', '0001_initial'),
     ]
 
     operations = [
