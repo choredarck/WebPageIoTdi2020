@@ -16,6 +16,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from chartUS import views
+
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-]
+    path('saludo/', views.saludo, name= "que-onda"),
+    path('fecha/', views.dameFecha, name= "fecha"), 
+    #path('edades/<int:edad>/<int:agno>', calculaEdad),
+    path('', views.Index.as_view(), name="Index"),
+    path('api/data/', views.get_data, name="api-data"),
+    path('api/chart/data/', views.ChartData.as_view()),   
+] +static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

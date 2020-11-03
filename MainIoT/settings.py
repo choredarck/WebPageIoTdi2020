@@ -57,7 +57,7 @@ ROOT_URLCONF = 'MainIoT.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['chartUS/templates/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
