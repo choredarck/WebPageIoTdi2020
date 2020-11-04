@@ -68,11 +68,14 @@ class ChartData(APIView):
     permission_classes = []
 
     def get(self, request, format=None):
+    			
+		
     	#***(1)Returns all customers from customer table
-        qs_count= sensordata.objects.first()
-        qs_count2= qs_count.valor
-        labels = ["User", "Blue", "Yellow", "Green", "Purple", "Orange"]
-        default_items= [qs_count2, 25, 32, 32, 12, 7]
+        qs_count= sensordata.objects.values_list('valor', flat= True)
+        label= sensordata.objects.values_list('id', flat= True)
+        #qs_count2= qs_count.valor
+        labels = label
+        default_items= qs_count
         data= {
                 "labels": labels,
                 "default": default_items,
