@@ -153,13 +153,14 @@ var ctx = document.getElementById('myChart');
                     <th>Remove</th>
                 </tr>                
                     <tr>
-                        <td>{{chartsensor_sensordata.valor}}</td>
+                    {%for i in chartsensor_sensordata %}
+                        <td>{{i.valor}}</td>
                         <td>date_created</td>
                         <td>order.status</td>
                         <td><a class="btn btn-sm btn-info" >Update</a></td>
                         <td><a class="btn btn-sm btn-danger" >Delete</a></td>
                     </tr>
-       
+                    {% endfor %}
             </table>
         </div>
     </div>
