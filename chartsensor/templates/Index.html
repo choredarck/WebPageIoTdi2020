@@ -115,7 +115,6 @@ var ctx = document.getElementById('myChart');
         <div class= 'col-sm-6'>
             <canvas id="myChart2" width="400" height="400"></canvas>
         </div>
-
     </div>
 </div>
 
@@ -131,15 +130,11 @@ var ctx = document.getElementById('myChart');
                     <th>Customer</th>
                     <th>Phone</th>
                 </tr>
-
-                {% for customer in customers %}
                     <tr>
                         <td><a class="btn btn-sm btn-info" href="{% url 'customer' customer.id %}">View</a></td>
-                        <td>{{customer.name}}</td>
-                        <td>{{customer.phone}}</td>
+                        <td>hola</td>
+                        <td>hola2</td>
                     </tr>
-                {% endfor %}
-
             </table>
         </div>
     </div>
