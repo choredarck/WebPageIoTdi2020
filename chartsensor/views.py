@@ -5,10 +5,11 @@ from django.views.generic import View
 from django.http import JsonResponse
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from chartsensor.models import sensordata
 
 # Create your views here.
 
-User= get_user_model()
+chartsensor_sensordata= get_user_model()
 
 import datetime
 from django.template import	 Template, Context
@@ -67,9 +68,11 @@ class ChartData(APIView):
     permission_classes = []
 
     def get(self, request, format=None):
-        qs_count= User.objects.all().count()
+    	#***(1)Returns all customers from customer table
+        qs_count= sensordata.objects.first()
+        qs_count2= qs_count.valor
         labels = ["User", "Blue", "Yellow", "Green", "Purple", "Orange"]
-        default_items= [qs_count, 25, 32, 32, 12, 7]
+        default_items= [qs_count2, 25, 32, 32, 12, 7]
         data= {
                 "labels": labels,
                 "default": default_items,

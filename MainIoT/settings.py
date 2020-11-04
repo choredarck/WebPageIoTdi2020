@@ -82,8 +82,8 @@ WSGI_APPLICATION = 'MainIoT.wsgi.application'
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }'''
-
-'''DATABASES = {
+'''
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'IoT_DB',
@@ -93,7 +93,6 @@ WSGI_APPLICATION = 'MainIoT.wsgi.application'
         'DATABASES_PORT': '5432',
     }
 }'''
-
 
 import dj_database_url
 from decouple import config

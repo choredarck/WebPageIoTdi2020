@@ -10,16 +10,16 @@ $.ajax({
     method: "GET",
     url: endpoint,
     success: function(data){
-        labels = ["User", "Blue", "Yellow", "Green", "Purple", "Orange"]
-        defaultData = [1, 25, 32, 32, 12, 7]
+        labels = data.labels
+        defaultData = data.default
         setChart()
     },
     error: function(error_data){
-    	labels = ["User", "Blue", "Yellow", "Green", "Purple", "Orange"]
-        defaultData = [1, 25, 32, 32, 12, 7]
-        setChart()
-        //console.log("error")
-        //console.log(error_data)
+    	//labels = ["User", "Blue", "Yellow", "Green", "Purple", "Orange"]
+        //defaultData = [1, 25, 32, 32, 12, 7]
+        //setChart()
+        console.log("error")
+        console.log(error_data)
     }
 })
 function setChart(){
@@ -153,7 +153,7 @@ var ctx = document.getElementById('myChart');
                     <th>Remove</th>
                 </tr>                
                     <tr>
-                    {%for i in chartsensor_sensordata %}
+                    {% for i in chartsensor_sensordata %}
                         <td>{{i.valor}}</td>
                         <td>date_created</td>
                         <td>order.status</td>
