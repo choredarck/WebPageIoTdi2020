@@ -131,7 +131,7 @@ var ctx = document.getElementById('myChart');
                     <th>Phone</th>
                 </tr>
                     <tr>
-                        <td><a class="btn btn-sm btn-info" href="{% url 'customer' customer.id %}">View</a></td>
+                        <td><a class="btn btn-sm btn-info">View</a></td>
                         <td>hola</td>
                         <td>hola2</td>
                     </tr>
@@ -143,7 +143,7 @@ var ctx = document.getElementById('myChart');
         <h5>LAST 5 ORDERS</h5>
         <hr>
         <div class="card card-body">
-            <a class="btn btn-primary  btn-sm btn-block" href="{% url 'create_order' %}">Create Order</a>
+            <a class="btn btn-primary  btn-sm btn-block">Create Order</a>
             <table class="table table-sm">
                 <tr>
                     <th>Product</th>
@@ -151,21 +151,15 @@ var ctx = document.getElementById('myChart');
                     <th>Status</th>
                     <th>Update</th>
                     <th>Remove</th>
-                </tr>
-
-                {% for order in orders %}
+                </tr>                
                     <tr>
-                        <td>{{order.product}}</td>
-                        <td>{{order.date_created}}</td>
-                        <td>{{order.status}}</td>
-                        <td><a class="btn btn-sm btn-info" href="{% url 'update_order' order.id %}">Update</a></td>
-
-                        <td><a class="btn btn-sm btn-danger" href="{% url 'delete_order' order.id %}">Delete</a></td>
-
+                        <td>product</td>
+                        <td>date_created</td>
+                        <td>order.status</td>
+                        <td><a class="btn btn-sm btn-info" >Update</a></td>
+                        <td><a class="btn btn-sm btn-danger" >Delete</a></td>
                     </tr>
-                {% endfor %}
-
-        
+       
             </table>
         </div>
     </div>
