@@ -72,7 +72,7 @@ class ChartData(APIView):
 		
     	#***(1)Returns all customers from customer table
         qs_count= sensordata.objects.values_list('valor', flat= True).order_by('id')
-        label= sensordata.objects.values_list('id', flat= True)..order_by('id')
+        label= sensordata.objects.values_list('id', flat= True).order_by('id')
         #qs_count2= qs_count.valor
         labels = label
         default_items= qs_count
