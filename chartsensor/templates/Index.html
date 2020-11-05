@@ -30,10 +30,10 @@ function setChart(){
         data: {
             labels: labels,
             datasets: [{
-                label: '# of Votes',
+                label: 'Medicion',
                 data: defaultData,
-                backgroundColor:'rgba(255, 99, 132, 0.2)',
-                borderColor:'rgba(255, 99, 132, 1)',
+                backgroundColor:'rgba(54, 162, 235, 0.2)',
+                borderColor:'rgba(54, 162, 235, 1)',
                 borderWidth: 1
             }]
         },
@@ -54,8 +54,8 @@ function setChart(){
             datasets: [{
                 label: 'Medicion',
                 data: defaultData,
-                backgroundColor:'rgba(255, 99, 132, 0.2)',
-                borderColor:'rgba(255, 99, 132, 1)',
+                backgroundColor:'rgba(54, 162, 235, 0.2)',
+                borderColor:'rgba(54, 162, 235, 1)',
                 borderWidth: 1
             }]
         },
@@ -80,7 +80,9 @@ var ctx = document.getElementById('myChart');
 
 <div class='row'>
     <div class='col-sm-12' url-endpoint='{% url "api-data" %}'>
-        <h1>Que pinche pedo compa mio :)</h1>
+        <h1 align="center">Diseño de Interfaces</h1>
+        <h1 align="center">Registro de variable temperatura IoT </h1>
+
         <div class= 'col-sm-6'>
             <canvas id="myChart" width="400" height="400"></canvas>
         </div>
@@ -89,56 +91,6 @@ var ctx = document.getElementById('myChart');
         </div>
     </div>
 </div>
-
-<div class="row">
-    <div class="col-md-5">
-        <h5>CUSTOMERS:</h5>
-        <hr>
-        <div class="card card-body">
-            <a class="btn btn-primary  btn-sm btn-block" href="">Create Customer</a>
-            <table class="table table-sm">
-                <tr>
-                    <th></th>
-                    <th>Customer</th>
-                    <th>Phone</th>
-                </tr>
-                    <tr>
-                        <td><a class="btn btn-sm btn-info">View</a></td>
-                        <td>hola</td>
-                        <td>hola2</td>
-                    </tr>
-            </table>
-        </div>
-    </div>
-
-    <div class="col-md-7">
-        <h5>LAST 5 ORDERS</h5>
-        <hr>
-        <div class="card card-body">
-            <a class="btn btn-primary  btn-sm btn-block">Create Order</a>
-            <table class="table table-sm">
-                <tr>
-                    <th>Product</th>
-                    <th>Date Orderd</th>
-                    <th>Status</th>
-                    <th>Update</th>
-                    <th>Remove</th>
-                </tr>                
-                    <tr>
-                    {% for i in sensordata %}
-                        <td>{{i.valor}}</td>
-                        <td>date_created</td>
-                        <td>order.status</td>
-                        <td><a class="btn btn-sm btn-info" >Update</a></td>
-                        <td><a class="btn btn-sm btn-danger" >Delete</a></td>
-                    </tr>
-                    {% endfor %}
-            </table>
-        </div>
-    </div>
-
-</div>
-
 
 {% endblock content %}
 

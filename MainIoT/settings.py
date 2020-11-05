@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'MainIoT.wsgi.application'
     }
 }'''
 
-'''DATABASES = {
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'IoT_DB',
@@ -92,16 +92,15 @@ WSGI_APPLICATION = 'MainIoT.wsgi.application'
         'HOST': '127.0.0.1',
         'DATABASES_PORT': '5432',
     }
-}'''
-
-import dj_database_url
+}
+'''import dj_database_url
 from decouple import config
 
 DATABASES = {
     'default': dj_database_url.config(
         default= config('DATABASE_URL')
         )
-}
+}'''
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
